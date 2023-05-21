@@ -1,0 +1,36 @@
+<mvc:View
+    controllerName="facturasApp.facturas.controller.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+        <Text text="que forma rara de poner un texto" />
+            <Panel
+                id="_IDGenPanel1"
+                headerText="{i18n>selectionScreen}"
+            >
+                <Label
+                    id="labelShipName"
+                    labelFor="shipName"
+                    text="{i18n>shipName}"
+                    class="sapUiSmallMargin"
+                />
+                <Input
+                    id="shipName"
+                    width="200px"
+                    class="sapUiSmallMarginEnd"
+                />
+                <Label
+                    id="labelCountry"
+                    text="{i18n>country}"
+                    class="sapUiSmallMargin"
+                />
+            </Panel>
+        </content>
+    </Page>
+</mvc:View>

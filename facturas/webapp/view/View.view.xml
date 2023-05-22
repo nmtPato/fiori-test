@@ -28,7 +28,7 @@
                 <Input
                     id="shipName"
                     width="200px"
-                    value = "{selectionScreen>/ShipName}"
+                    value="{selectionScreen>/ShipName}"
                     class="sapUiSmallMarginEnd"
                 />
                 <Label
@@ -65,12 +65,24 @@
                     class="sapUiSmallMarginEnd"
                 />
             </Panel>
-            <Panel id="_IDGenPanel2" >
-                <Input  id="asdf"
-                    width="200px"
-                    value = "{selectionScreen>/ShipName}"
-                    class="sapUiSmallMarginEnd" >
-                </Input>
+            <Panel id="_IDGenPanel2">
+                <List
+                    id="invoicesList"
+                    headerText="{i18n>invoicesHeaderList}"
+                    class="sapUiResponsiveMargin"
+                    width="auto"
+                    items="{/Invoices}"
+                >
+                    <items>
+                        <ObjectListItem 
+                            id="_IDGenObjectListItem1"
+                            title="{ShipName} - {Country}"
+                            number="{ parts : [ {path: 'ExtendedPrice'},{path: 'selectionScreen>/Currency'}],type: 'sap.ui.model.type.Currency',formatOptions: {showMeasure : false}}"
+                            numberUnit="{selectionScreen>/Currency}"
+                            numberState="{= ${ExtendedPrice} > 100 ? 'Success' : 'Warning'}"
+                        />
+                    </items>
+                </List>
             </Panel>
         </content>
     </Page>

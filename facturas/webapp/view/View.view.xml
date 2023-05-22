@@ -3,13 +3,18 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
+    xmlns:core="sap.ui.core"
 >
     <Page
         id="page"
         title="{i18n>title}"
     >
         <content>
-        <Text text="que forma rara de poner un texto" />
+            <Text
+                id="_IDGenText1"
+                text="que forma rara de poner un texto"
+                class="sapUiSmallMarginEnd"
+            />
             <Panel
                 id="_IDGenPanel1"
                 headerText="{i18n>selectionScreen}"
@@ -23,12 +28,41 @@
                 <Input
                     id="shipName"
                     width="200px"
+                    value = "{selectionScreen>/ShipName}"
                     class="sapUiSmallMarginEnd"
                 />
                 <Label
                     id="labelCountry"
                     text="{i18n>country}"
                     class="sapUiSmallMargin"
+                />
+                <Select
+                    id="slCountry"
+                    selectedKey="{selectionScreen>/CountryKey}"
+                    forceSelection="false"
+                    items="{selectionScreen>/Countries}"
+                >
+                    <items>
+                        <core:Item
+                            id="_IDGenItem1"
+                            key="{selectionScreen>key}"
+                            text="{selectionScreen>text}"
+                        />
+                    </items>
+                </Select>
+                <Button
+                    id="btnFilter"
+                    text="{i18n>btnFilter}"
+                    icon="sap-icon://filter"
+                    press="onFilter"
+                    class="sapUiSmallMarginEnd"
+                />
+                <Button
+                    id="btnClearFilter"
+                    text="{i18n>btnClearFilter}"
+                    icon="sap-icon://clear-filter"
+                    press="onClearFilter"
+                    class="sapUiSmallMarginEnd"
                 />
             </Panel>
         </content>

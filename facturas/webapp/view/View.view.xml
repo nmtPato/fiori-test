@@ -65,6 +65,13 @@
                     class="sapUiSmallMarginEnd"
                 />
             </Panel>
+            <Panel id="_IDGenPanel2" >
+                <Input  id="asdf"
+                    width="200px"
+                    value = "{selectionScreen>/ShipName}"
+                    class="sapUiSmallMarginEnd" >
+                </Input>
+            </Panel>
         </content>
     </Page>
 </mvc:View>
